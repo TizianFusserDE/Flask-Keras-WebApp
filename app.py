@@ -8,10 +8,10 @@ import numpy as np
 import tensorflow as tf
 
 # Keras
-from keras.applications.imagenet_utils import preprocess_input, decode_predictions
-from keras.models import load_model
-from keras.preprocessing import image
-from keras.applications.resnet50 import ResNet50
+from tensorflow.keras.applications.imagenet_utils import preprocess_input, decode_predictions
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.resnet50 import ResNet50
 
 
 # Flask utils
@@ -27,7 +27,7 @@ app = Flask(__name__)
 
 model = ResNet50(weights="imagenet")
 
-graph = tf.get_default_graph()
+graph = tf.compat.v1.get_default_graph()
 
 def model_predict(img_path, model):
     img = image.load_img(img_path, target_size=(224, 224))

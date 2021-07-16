@@ -12,3 +12,5 @@ def test_get_employee_details_check_status_code_equals_200():
         analysis.list_models()
     except:
         assert 2 == 1
+
+test_get_employee_details_check_status_code_equals_200()

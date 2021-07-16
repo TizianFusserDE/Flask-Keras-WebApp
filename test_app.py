@@ -6,11 +6,12 @@ from msrest.authentication import CognitiveServicesCredentials
 import azure
 
 
-def test_get_employee_details_check_status_code_equals_200():
+def test_Azure_key_endpoint():
     analysis = ComputerVisionClient(cog_endpoint, CognitiveServicesCredentials(cog_key))
     try:
         analysis.list_models()
     except:
-        assert 2 == 1
+        assert False, "Wrong key and endpoint from Azure Cognitive Service!"
 
-test_get_employee_details_check_status_code_equals_200()
+test_Azure_key_endpoint()
+

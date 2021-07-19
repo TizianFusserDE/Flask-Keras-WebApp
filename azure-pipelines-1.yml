@@ -66,10 +66,46 @@ stages:
         pip install -e .
       displayName: 'Install dependencies'
   
-    - script: |
-        python -m pytest test_app/
-      displayName: 'pytest'
+ 
+stages:
+- stage: Test
+  displayName: Test stage
+  jobs:
+  - job: TestJob
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '$(pythonVersion)'
+      displayName: 'Use Python $(pythonVersion)'
+    
+    - script: |   
+       flake8 --output-file=lint-testresults.xml --format junit-xml
+      displayName: 'Run lint tests'
 
+    - script: |   
+       python -m pytest . --cov=test_app --cov-report=html --cov-report=xml --junitxml=unit-testresults.xml
+      condition: succeededOrFailed()
+      displayName: 'Run unit tests'
+
+    - task: PublishTestResults@2
+      condition: succeededOrFailed()
+      inputs:
+        testResultsFiles: '*-testresults.xml'
+        testRunTitle: 'Linting & Unit tests'
+        failTaskOnFailedTests: true
+      displayName: 'Publish test results'
+
+    - task: PublishCodeCoverageResults@1
+      displayName: 'Publish coverage report'
+      condition: succeededOrFailed()
+      inputs:
+        codeCoverageTool: Cobertura
+        summaryFileLocation: 'coverage.xml'
+        reportDirectory: 'htmlcov'
+        failIfCoverageEmpty: true
+ 
 - stage: Deploy
   displayName: 'Deploy Web App'
   dependsOn: Build

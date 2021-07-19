@@ -50,6 +50,8 @@ stages:
 
     - script: |
          python --version
+         pytest --version
+         pip install pytest
          python -m pytest test_app.py 
       displayName: 'Run unit tests'
 

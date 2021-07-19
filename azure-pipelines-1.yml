@@ -59,6 +59,10 @@ stages:
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       displayName: 'Upload package'
       artifact: drop
+     
+    - script: |
+        python -m pytest test_app/
+      displayName: 'pytest'
 
 - stage: Deploy
   displayName: 'Deploy Web App'

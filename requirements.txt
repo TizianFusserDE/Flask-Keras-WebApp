@@ -9,3 +9,4 @@ tensorflow
 azure-cognitiveservices-vision-computervision
 pytest
 pytest-azurepipelines
+pytest-cov

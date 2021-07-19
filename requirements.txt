@@ -8,3 +8,4 @@ h5py
 tensorflow
 azure-cognitiveservices-vision-computervision
 pytest
+pytest-azurepipelines

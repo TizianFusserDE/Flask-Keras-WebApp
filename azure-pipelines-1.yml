@@ -47,6 +47,11 @@ stages:
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
+    - script: |   
+         python -m pytest test_app.py 
+       condition: succeededOrFailed()
+       displayName: 'Run unit tests'
+
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:

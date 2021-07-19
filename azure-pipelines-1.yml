@@ -39,6 +39,7 @@ stages:
       displayName: 'Use Python $(pythonVersion)'
 
     - script: |
+        python --version
         python -m venv antenv
         source antenv/bin/activate
         python -m pip install --upgrade pip
@@ -47,7 +48,8 @@ stages:
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
-    - script: |   
+    - script: |
+         python --version
          python -m pytest test_app.py 
       displayName: 'Run unit tests'
 

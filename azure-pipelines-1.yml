@@ -49,7 +49,7 @@ stages:
 
     - script: |   
        flake8 --output-file=lint-testresults.xml --format junit-xml
-  displayName: 'Run lint tests'
+    displayName: 'Run lint tests'
 
     - script: |   
        python -m pytest . --cov=test_app.py --cov-report=html --cov-report=xml --junitxml=unit-testresults.xml

@@ -48,7 +48,7 @@ stages:
       displayName: "Install requirements"
      
     - script: |
-          python -m pytest test_app.py
+          python -m pytest .  --cov=test_app.py --cov-report=html --cov-report=xml --junitxml=unit-testresults.xml
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'

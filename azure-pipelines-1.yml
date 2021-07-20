@@ -52,7 +52,7 @@ stages:
     displayName: 'Run lint tests'
 
     - script: |   
-       python -m pytest . --cov=test_app.py --cov-report=html --cov-report=xml --junitxml=unit-testresults.xml
+       python -m pytest . --cov=test_app --cov-report=html --cov-report=xml --junitxml=unit-testresults.xml
       condition: succeededOrFailed()
       displayName: 'Run unit tests'
 

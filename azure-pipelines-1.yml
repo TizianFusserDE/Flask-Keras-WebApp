@@ -47,7 +47,7 @@ stages:
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
-     -script: |   
+    -script: |   
        flake8 --output-file=lint-testresults.xml --format junit-xml
   displayName: 'Run lint tests'
 

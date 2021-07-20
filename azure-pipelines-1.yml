@@ -50,9 +50,7 @@ stages:
     - script: |   
        flake8 --output-file=lint-testresults.xml --format junit-xml
     displayName: 'Run lint tests'
-
-   
-
+ 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:

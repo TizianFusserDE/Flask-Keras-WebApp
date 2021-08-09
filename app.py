@@ -12,8 +12,8 @@ import tensorflow as tf
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from msrest.authentication import CognitiveServicesCredentials
 
-cog_key = '7219d6910b224427a8296433678bca1b'
-cog_endpoint = 'https://devopsprototypevision.cognitiveservices.azure.com/'
+cog_key = '99ba7f2785074b99bac2c90c9e904239'
+cog_endpoint = 'https://devopcog.cognitiveservices.azure.com/'
 
 
 # Keras

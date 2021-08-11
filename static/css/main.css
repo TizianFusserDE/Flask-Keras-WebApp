@@ -4,7 +4,7 @@ body {
   padding: 0;
   text-align: center;
   color: #222;
-  background-color: lightgrey;
+  background-color: #464646;
 }
 
 /* The navigation menu */
@@ -76,8 +76,8 @@ body {
 }
 
 .class-a {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #D04A02;
+  color: black;
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -85,11 +85,11 @@ body {
   border-radius: 10%;
 }
 .class-a:hover, .class-a:focus {
-  background-color: #3e8e41;
+  background-color: #933401;
 }
 .class-b {
-  background-color: orange;
-  color: white;
+  background-color: #FFB600;
+  color: black;
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -97,11 +97,11 @@ body {
   border-radius: 10%;
 }
 .class-b:hover, .class-b:focus {
-  background-color: darkorange;
+  background-color: #C28A00;
 }
 .class-c {
-  background-color: mediumblue;
-  color: white;
+  background-color: #E0301E;
+  color: black;
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -109,5 +109,5 @@ body {
   border-radius: 10%;
 }
 .class-c:hover, .class-c:focus {
-  background-color: darkblue;
+  background-color: #AA2417;
 }
